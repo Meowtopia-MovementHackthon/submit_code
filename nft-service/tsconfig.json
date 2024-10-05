@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "declaration": true,
+        "removeComments": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "allowSyntheticDefaultImports": true,
+        "strictPropertyInitialization": false,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "strictBindCallApply": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "target": "ES2021",
+        "incremental": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
+        "outDir": "./dist",
+        "baseUrl": "./",
+    },
+    "include": ["src/**/*", "./babel.config.js", "./jest.config.js", "./tsconfig.build.json"]
+}
