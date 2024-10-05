@@ -12,7 +12,7 @@ MeowTopia is an enchanting idle tapper game that transports players into a whims
 - [NFT Service](#nft-service)
 - [Game](#game)
 - [License](#license)
-- [Contact](#contact)
+- [Smart Contracts](#smart-contracts)
 
 ## Project Structure
 The project consists of three main components:
@@ -27,10 +27,10 @@ Please read the readme of each folder.
 ## Usage
 To start your MeowTopia adventure:
 1. Connect your Movement chain wallet
-2. Start tapping to collect MILK
+2. Start tapping to collect MEOW
 3. Upgrade your Meowster's level and recruit more Heroes
-4. Complete Missions to earn PAW
-5. Invite friends to earn PAW together
+4. Complete Missions to earn MEOW
+5. Invite friends to earn MEOW together
 
 ## Technologies Used
 - Smart contract: Solidity, Javascript
@@ -41,7 +41,7 @@ To start your MeowTopia adventure:
 Our smart contracts power the following features:
 - MEOW Token: The primary currency of MeowTopia
 - NFT management for Lands, Meowster Heroes, and Items
-- Game logic for MILK Mania, Meow Idle, Boss Raid, and Clan War modes
+- Game logic for MEOW Mania, Meow Idle, Boss Raid, and Clan War modes
 - ERC404 NFT Marketplace to buy and sell small nft fragments
 
 ## NFT Service
@@ -71,8 +71,10 @@ Compete with other clans in epic battles for territory and rewards.
 ## License
 MIT License
 
-## Contact
-Offical website: https://meowtopia.io
+## Smart Contracts:
+SoundBound Token: 0x55763d2127F97F05eF903E6540494D00151fc6a1
+Cat NFT: 0x01f562A25d2da7158FEc675C8a926CB1c4faDF97
+Material Item NFT: 0xF2F7119FA94E04E68FEC727F1b989C481898327f
 
 ---
 
