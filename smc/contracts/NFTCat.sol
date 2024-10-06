@@ -161,7 +161,7 @@ contract AdvancedDynamicCatNFT is Initializable, ERC721Upgradeable, OwnableUpgra
             ? string(abi.encodePacked(
                 baseURI,
                 tokenId.toString(),
-                "?type=", catData.catType,
+                "?type=", catData.catType.toString(),
                 "&level=", catData.level.toString(),
                 "&attack=", catData.attack.toString(),
                 "&armor=", catData.armor.toString(),
@@ -227,9 +227,6 @@ contract AdvancedDynamicCatNFT is Initializable, ERC721Upgradeable, OwnableUpgra
 
     function mint() public returns (uint256) {
         uint256 catType = ICatConfig(catConfigAddress).getRandomActiveCatType(uint256(keccak256(abi.encodePacked(getCurrentTimestamp(), msg.sender))));
-        if(catType > 3){
-            catType = 1;
-        }
         require(ICatConfig(catConfigAddress).isCatTypeActive(catType), "Cat type is not active");
 
         _tokenIds.increment();
@@ -537,27 +534,39 @@ contract AdvancedDynamicCatNFT is Initializable, ERC721Upgradeable, OwnableUpgra
 
     function getTokensOfOwner(address owner) public view returns (CatItemInfo[] memory) {
         uint256 tokenCount = balanceOf(owner);
-        CatItemInfo[] memory ownedCats = new CatItemInfo[](tokenCount);
+        if (tokenCount == 0) {
+            return new CatItemInfo[](0);
+        }
 
-        for (uint256 i = 1; i <= _tokenIds.current(); i++) {
-            if (_exists(i) && ownerOf(i) == owner) {
-                ownedCats[i-1] = CatItemInfo({
-                    catType: _catMetadata[i].catType,
-                    level: _catMetadata[i].level,
-                    attack: _catMetadata[i].attack,
-                    armor: _catMetadata[i].armor,
-                    attackSpeed: _catMetadata[i].attackSpeed,
-                    magic: _catMetadata[i].magic,
-                    manaPoint: _catMetadata[i].manaPoint,
-                    healthPoint: _catMetadata[i].healthPoint,
-                    criticalDamage: _catMetadata[i].criticalDamage,
-                    equippedItems: _catMetadata[i].equippedItems,
-                    lastClaimTime: _catMetadata[i].lastClaimTime,
-                    liveTime: _catMetadata[i].liveTime,
-                    catId: i,
-                    dob: _catMetadata[i].dob
+        CatItemInfo[] memory ownedCats = new CatItemInfo[](tokenCount);
+        uint256 currentId = 1;
+        uint256 currentIndex = 0;
+        uint256 totalSupply = _tokenIds.current();
+
+        while(currentIndex < tokenCount && currentId <= totalSupply){
+            if (_exists(currentId) && ownerOf(currentId) == owner) {
+                CatMetadata memory catData = _catMetadata[currentId];
+                ownedCats[currentIndex] = CatItemInfo({
+                    catType: catData.catType,
+                    level: catData.level,
+                    attack: catData.attack,
+                    armor: catData.armor,
+                    attackSpeed: catData.attackSpeed,
+                    magic: catData.magic,
+                    manaPoint: catData.manaPoint,
+                    healthPoint: catData.healthPoint,
+                    criticalDamage: catData.criticalDamage,
+                    equippedItems: catData.equippedItems,
+                    lastClaimTime: catData.lastClaimTime,
+                    liveTime: catData.liveTime,
+                    catId: currentId,
+                    dob: catData.dob
                 });
+                currentIndex++;
             }
+
+
+            currentId++;
         }
 
         return ownedCats;
