@@ -72,9 +72,11 @@ Compete with other clans in epic battles for territory and rewards.
 MIT License
 
 ## Smart Contracts:
-SoundBound Token: 0x55763d2127F97F05eF903E6540494D00151fc6a1
-Cat NFT: 0x01f562A25d2da7158FEc675C8a926CB1c4faDF97
-Material Item NFT: 0xF2F7119FA94E04E68FEC727F1b989C481898327f
+CatConfig: 0xf8be1fC295C2D55a146532537Dd083e7dCD27Bec
+MaterialItem NFT: 0xBe6899Fe97ee79b32f079a4C717329e6B8f2Ab90
+Deploying SoulboundERC20...
+MEOW Token: 0x6fa93001327E18e089De33fc4F819a074047acbC
+Cat NFT: 0xa174353DCcb50237224b354077e5C2846f4e43c6
 
 ---
 
