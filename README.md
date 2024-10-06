@@ -3,6 +3,9 @@
 ## Description
 MeowTopia is an enchanting idle tapper game that transports players into a whimsical world of milk-loving kitties. Built on the Movement chain, this game combines simple mechanics with strategic depth, offering a delightful experience for players of all ages. Your mission is to produce as much milk as possible by tapping, upgrading, and recruiting Meowster Heroes while embarking on epic quests through enchanted forests, ancient ruins, and mystical kingdoms.
 
+## Demo Video
+https://drive.google.com/file/d/1bKZkT2XI9nx_GwfRgtf8k1J-jJIgJIi6/view?usp=sharing
+
 ## Table of Contents
 - [Project Structure](#project-structure)
 - [Installation](#installation)
